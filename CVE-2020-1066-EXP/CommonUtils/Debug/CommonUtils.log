@@ -1,0 +1,33 @@
+﻿生成启动时间为 2020/5/2 15:58:28。
+     1>项目“E:\git\CVE-2020-1066\CVE-2020-1066-EXP\CommonUtils\CommonUtils.vcxproj”在节点 3 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\CommonUtils.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\CommonUtils.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CommonUtils.cpp DirectoryObject.cpp FileOpLock.cpp FileSymlink.cpp Hardlink.cpp NativeSymlink.cpp RegistrySymlink.cpp ReparsePoint.cpp ScopedHandle.cpp
+         ScopedHandle.cpp
+         ReparsePoint.cpp
+         RegistrySymlink.cpp
+         NativeSymlink.cpp
+         Hardlink.cpp
+         FileSymlink.cpp
+         FileOpLock.cpp
+         DirectoryObject.cpp
+         CommonUtils.cpp
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"E:\git\CVE-2020-1066\CVE-2020-1066-EXP\Build\CommonUtils.lib" /NOLOGO Debug\CommonUtils.obj
+         Debug\DirectoryObject.obj
+         Debug\FileOpLock.obj
+         Debug\FileSymlink.obj
+         Debug\Hardlink.obj
+         Debug\NativeSymlink.obj
+         Debug\RegistrySymlink.obj
+         Debug\ReparsePoint.obj
+         Debug\ScopedHandle.obj
+         Debug\stdafx.obj
+         CommonUtils.vcxproj -> E:\git\CVE-2020-1066\CVE-2020-1066-EXP\Build\CommonUtils.lib
+     1>已完成生成项目“E:\git\CVE-2020-1066\CVE-2020-1066-EXP\CommonUtils\CommonUtils.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:08.48

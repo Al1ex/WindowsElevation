@@ -1,0 +1,26 @@
+﻿  base64.cpp
+  RogueWinRM.cpp
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(85,12): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“wchar_t *”
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(85,12): message : 请考虑在格式字符串中使用“%ls”
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(85,12): message : 请考虑在格式字符串中使用“%lls”
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(85,12): message : 请考虑在格式字符串中使用“%Ls”
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(85,12): message : 请考虑在格式字符串中使用“%ws”
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(131,20): warning C4101: “tkp”: 未引用的局部变量
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(132,23): warning C4101: “sdSecurityDescriptor”: 未引用的局部变量
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(169,9): warning C4101: “SessionId”: 未引用的局部变量
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(172,23): warning C4101: “sa”: 未引用的局部变量
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(370,147): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(377,74): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(389,126): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(411,161): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(412,86): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Al1ex\Desktop\RogueWinRM\RogueWinRM.cpp(261,6): warning C4101: “iSendResult”: 未引用的局部变量
+  LocalNegotiator.cpp
+  derparse.c
+  spnego.c
+  spnegoparse.c
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 133 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  RogueWinRM.vcxproj -> C:\Users\Al1ex\Desktop\RogueWinRM\x64\Release\RogueWinRM.exe

@@ -1,0 +1,207 @@
+#include <windows.h>  
+#include <conio.h>  
+#include <tchar.h>
+#include <iostream>
+#include <comdef.h>
+#include <strsafe.h>
+
+#define STR bstr_t
+#define BUFFER_SIZE 2048
+#define PIPESTDIN L"\\\\.\\pipe\\Q4nStdin"
+#define PIPESTDOUT L"\\\\.\\pipe\\Q4nStdout"
+#define MYFILE L"C:\\windows\\system32\\cmd.exe"
+
+typedef struct {
+    HANDLE  ReadPipeHandle;         // Handle to shell stdout pipe
+    HANDLE  WritePipeHandle;        // Handle to shell stdin pipe
+    HANDLE  ProcessHandle;          // Handle to shell process
+
+    HANDLE  RealReadPipeHandle;
+    HANDLE  RealWritePipeHandle;
+
+} *PSESSION_DATA;
+
+int PrintError(unsigned int line, DWORD hr)
+{
+    wprintf_s(L"ERROR: Line:%d HRESULT: 0x%X\n", line, hr);
+    return hr;
+}
+
+static HANDLE
+StartShell(
+    WCHAR* exec_file,
+    HANDLE ShellStdinPipeHandle,
+    HANDLE ShellStdoutPipeHandle
+)
+{
+    PROCESS_INFORMATION ProcessInformation;
+    STARTUPINFO si;
+    HANDLE ProcessHandle = NULL;
+
+    //
+    // Initialize process startup info
+    //
+    si.cb = sizeof(STARTUPINFO);
+    si.lpReserved = NULL;
+    si.lpTitle = NULL;
+    si.lpDesktop = NULL;
+    si.dwX = si.dwY = si.dwXSize = si.dwYSize = 0L;
+    si.wShowWindow = SW_HIDE;
+    si.lpReserved2 = NULL;
+    si.cbReserved2 = 0;
+
+    si.dwFlags = STARTF_USESTDHANDLES | STARTF_USESHOWWINDOW;
+
+    si.hStdInput = ShellStdinPipeHandle;
+    si.hStdOutput = ShellStdoutPipeHandle;
+
+    DuplicateHandle(GetCurrentProcess(), ShellStdoutPipeHandle,
+        GetCurrentProcess(), &si.hStdError,
+        DUPLICATE_SAME_ACCESS, TRUE, 0);
+
+    if (CreateProcess(NULL, exec_file, NULL, NULL, TRUE, 0, NULL, NULL,
+        &si, &ProcessInformation))
+    {
+        ProcessHandle = ProcessInformation.hProcess;
+        CloseHandle(ProcessInformation.hThread);
+        printf("[+] CreateProcess() ok\n");
+    }
+    else
+        printf("Failed to execute shell, error = %d", GetLastError());
+
+    return(ProcessHandle);
+}
+
+DWORD ThreadOutput(LPVOID pv) {
+    DWORD   BytesRead, BytesWrite;
+    PSESSION_DATA Session = (PSESSION_DATA)pv;
+
+    DWORD BufferCnt, BytesToWrite;
+
+    while (1) {
+        BYTE    Buffer[BUFFER_SIZE]{ 0 };
+        BYTE    Buffer2[BUFFER_SIZE * 2 + 30]{ 0 };
+        BYTE PrevChar = 0;
+        ReadFile(Session->ReadPipeHandle, Buffer, sizeof(Buffer),
+            &BytesRead, NULL);
+        for (BufferCnt = 0, BytesToWrite = 0; BufferCnt < BytesRead; BufferCnt++) {
+            if (Buffer[BufferCnt] == '\n' && PrevChar != '\r')
+                Buffer2[BytesToWrite++] = '\r';
+            PrevChar = Buffer2[BytesToWrite++] = Buffer[BufferCnt];
+        }
+        WriteFile(Session->RealReadPipeHandle, Buffer2, BytesToWrite, &BytesWrite, NULL);
+        printf("output:%d\n", BytesWrite);
+    }
+
+    return 0;
+}
+DWORD ThreadInput(LPVOID pv) {
+
+    DWORD   BytesRead, BytesWrite;
+    PSESSION_DATA Session = (PSESSION_DATA)pv;
+    DWORD BufferCnt, BytesToWrite;
+    for (;;) {
+        BYTE    Buffer[BUFFER_SIZE]{ 0 };
+        BYTE    Buffer2[BUFFER_SIZE * 2 + 30]{ 0 };
+        BYTE PrevChar = 0;
+        ReadFile(Session->RealWritePipeHandle, Buffer, sizeof(Buffer),
+            &BytesRead, NULL);
+        if (!BytesRead)
+            continue;
+        WriteFile(Session->WritePipeHandle, Buffer, BytesRead, &BytesWrite, NULL);
+        printf("input:%d\n", BytesWrite);
+    }
+    return 0;
+}
+
+static VOID
+RedirectStream(
+    WCHAR* pipeNameStdin,
+    WCHAR* pipeNameStdout,
+    WCHAR* exec_file
+)
+{
+    HANDLE hPipeStdin, hPipeStdout;
+    hPipeStdin = CreateFile(
+        pipeNameStdin,   // pipe name   
+        GENERIC_READ |  // read and write access   
+        GENERIC_WRITE,
+        0,              // no sharing   
+        NULL,           // default security attributes  
+        OPEN_EXISTING,  // opens existing pipe   
+        0,              // default attributes   
+        NULL);          // no template file   
+    if (hPipeStdin == INVALID_HANDLE_VALUE)
+    {
+        PrintError(__LINE__, GetLastError());
+        getchar(); exit(-1);
+    }
+    hPipeStdout = CreateFile(
+        pipeNameStdout,   // pipe name   
+        GENERIC_READ |  // read and write access   
+        GENERIC_WRITE,
+        0,              // no sharing   
+        NULL,           // default security attributes  
+        OPEN_EXISTING,  // opens existing pipe   
+        0,              // default attributes   
+        NULL);          // no template file   
+    if (hPipeStdout == INVALID_HANDLE_VALUE)
+    {
+        PrintError(__LINE__, GetLastError());
+        getchar(); exit(-1);
+    }
+
+    PSESSION_DATA Session = NULL;
+    BOOL Result;
+    SECURITY_ATTRIBUTES SecurityAttributes;
+    HANDLE ShellStdinPipe = NULL;
+    HANDLE ShellStdoutPipe = NULL;
+    Session = (PSESSION_DATA)malloc(sizeof(PSESSION_DATA));
+    if (Session == NULL) {
+        return;
+    }
+    Session->ReadPipeHandle = NULL; //cmd的输出
+    Session->WritePipeHandle = NULL; //cmd的输入
+    SecurityAttributes.nLength = sizeof(SecurityAttributes);
+    SecurityAttributes.lpSecurityDescriptor = NULL; // Use default ACL
+    SecurityAttributes.bInheritHandle = TRUE; // Shell will inherit handles
+
+    Result = CreatePipe(&Session->ReadPipeHandle, &ShellStdoutPipe,
+        &SecurityAttributes, 0);
+    if (!Result) {
+        PrintError(__LINE__, GetLastError());
+        getchar(); exit(-1);
+    }
+    Result = CreatePipe(&ShellStdinPipe, &Session->WritePipeHandle,
+        &SecurityAttributes, 0);
+
+    if (!Result) {
+        PrintError(__LINE__, GetLastError());
+        getchar(); exit(-1);
+    }
+    Session->ProcessHandle = StartShell(exec_file, ShellStdinPipe, ShellStdoutPipe);
+    CloseHandle(ShellStdinPipe);
+    CloseHandle(ShellStdoutPipe);
+
+    Session->RealReadPipeHandle = hPipeStdout;
+    Session->RealWritePipeHandle = hPipeStdin;
+
+    HANDLE ho = CreateThread(0, 0, ThreadOutput, Session, 0, 0);
+    HANDLE hi = CreateThread(0, 0, ThreadInput, Session, 0, 0);
+
+    WaitForSingleObject(ho, INFINITE);
+    WaitForSingleObject(hi, INFINITE);
+}
+
+int _tmain() {
+
+    TCHAR exec_file[MAX_PATH];
+    TCHAR stdinpipe[MAX_PATH];
+    TCHAR stdoutpipe[MAX_PATH];
+    StringCchCopy(exec_file, MAX_PATH, MYFILE);
+    StringCchCopy(stdinpipe, MAX_PATH, PIPESTDIN); //cmd的输入
+    StringCchCopy(stdoutpipe, MAX_PATH, PIPESTDOUT); //cmd的输出
+
+    RedirectStream(stdinpipe, stdoutpipe, exec_file);
+    return 0;
+}

