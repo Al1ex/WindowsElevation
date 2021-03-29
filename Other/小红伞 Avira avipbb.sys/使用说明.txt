@@ -1,8 +1,0 @@
-cmd.exe 纯API写的添加用户 这个不用管系统理是否有net和net1
-添加用户 k8team  
-密码为 k8team
-
-查看是否成功
-net user k8team
-
-Build 20131024  by  K8拉登哥哥

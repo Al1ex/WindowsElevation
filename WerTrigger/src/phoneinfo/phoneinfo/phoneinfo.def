@@ -1,0 +1,6 @@
+LIBRARY phoneinfo
+
+EXPORTS
+DllMain PRIVATE
+BindMe PRIVATE
+

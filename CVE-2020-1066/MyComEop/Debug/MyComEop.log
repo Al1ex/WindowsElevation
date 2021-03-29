@@ -1,0 +1,20 @@
+﻿生成启动时间为 2020/5/2 16:13:44。
+     1>项目“E:\git\CVE-2020-1066\CVE-2020-1066-EXP\MyComEop\MyComEop.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _X86 /D _CRT_SECURE_NO_WARNINGS /D MSFROTTENPOTATO_EXPORTS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyComEop.cpp
+         MyComEop.cpp
+     1>e:\git\cve-2020-1066\cve-2020-1066-exp\mycomeop\stdafx.h(53): warning C4200: 使用了非标准扩展 : 结构/联合中的零大小数组
+                 当 UDT 包含大小为零的数组时，无法生成复制构造函数或副本赋值运算符
+     1>e:\git\cve-2020-1066\cve-2020-1066-exp\mycomeop\mycomeop.cpp(881): warning C4101: “v5”: 未引用的局部变量
+     1>e:\git\cve-2020-1066\cve-2020-1066-exp\mycomeop\mycomeop.cpp(950): warning C4101: “err”: 未引用的局部变量
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\git\CVE-2020-1066\CVE-2020-1066-EXP\Build\MyComEop.exe" /INCREMENTAL /NOLOGO secur32.lib Credui.lib Rpcrt4.lib "E:\git\CVE-2020-1066\CVE-2020-1066-EXP\Build\CommonUtils.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"E:\git\CVE-2020-1066\CVE-2020-1066-EXP\Build\MyComEop.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\git\CVE-2020-1066\CVE-2020-1066-EXP\Build\MyComEop.lib" /MACHINE:X86 Debug\MyComEop.res
+         Debug\resolver_c.obj
+         Debug\MyComEop.obj
+         Debug\stdafx.obj
+         MyComEop.vcxproj -> E:\git\CVE-2020-1066\CVE-2020-1066-EXP\Build\MyComEop.exe
+     1>已完成生成项目“E:\git\CVE-2020-1066\CVE-2020-1066-EXP\MyComEop\MyComEop.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.33

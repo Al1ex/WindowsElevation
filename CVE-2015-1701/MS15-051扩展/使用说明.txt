@@ -1,0 +1,20 @@
+
+
+Microsoft Windows - Local Privilege Escalation (MS15-051)
+CVE-2015-1701  自行查看官方公告 漏洞支持哪些系统...
+
+pr0 为无参版提权 直接添加帐号密码  不支持2003/Win8.1  支持Win7/2008 R2  其它系统未测
+
+pr1 为自定义参数版  支持2003/Win7/2008 R2  其它系统未测
+
+2013年8月28日后  
+所有内部版提权帐号密码均改为如下 以前的全部作废
+
+添加用户 Administartor$  
+密码为 FreeHack520!@#
+
+查看是否成功
+net user Administartor$
+
+
+Build 20150525  by  K8拉登哥哥

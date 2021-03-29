@@ -1,0 +1,11 @@
+﻿  Source.cpp
+c:\program files\windows kits\10\include\10.0.14393.0\um\ddraw.h(41): warning C4005: 'CO_E_NOTINITIALIZED': macro redefinition
+  c:\program files\windows kits\10\include\10.0.14393.0\shared\winerror.h(29478): note: see previous definition of 'CO_E_NOTINITIALIZED'
+c:\users\saif\documents\visual studio 2017\projects\ms17-017_pal\ms17-017_pal\source.cpp(189): warning C4129: '_': unrecognized character escape sequence
+c:\users\saif\documents\visual studio 2017\projects\ms17-017_pal\ms17-017_pal\source.cpp(189): warning C4129: '/': unrecognized character escape sequence
+c:\users\saif\documents\visual studio 2017\projects\ms17-017_pal\ms17-017_pal\source.cpp(191): warning C4129: '_': unrecognized character escape sequence
+c:\users\saif\documents\visual studio 2017\projects\ms17-017_pal\ms17-017_pal\source.cpp(292): warning C4477: 'printf' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 1 has type 'HPALETTE'
+c:\users\saif\documents\visual studio 2017\projects\ms17-017_pal\ms17-017_pal\source.cpp(327): warning C4477: 'printf' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 1 has type 'HANDLE'
+  LINK : C:\Users\saif\Documents\Visual Studio 2017\Projects\MS17-017_PAL\Debug\MS17-017_PAL.exe not found or not built by the last incremental link; performing full link
+  MS17-017_PAL.vcxproj -> C:\Users\saif\Documents\Visual Studio 2017\Projects\MS17-017_PAL\Debug\MS17-017_PAL.exe
+  MS17-017_PAL.vcxproj -> C:\Users\saif\Documents\Visual Studio 2017\Projects\MS17-017_PAL\Debug\MS17-017_PAL.pdb (Partial PDB)

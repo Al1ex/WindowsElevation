@@ -1,0 +1,8 @@
+﻿  main.c
+c:\program files (x86)\windows kits\8.1\include\um\ddraw.h(48): warning C4005: 'CO_E_NOTINITIALIZED': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(28049): note: see previous definition of 'CO_E_NOTINITIALIZED'
+c:\users\saif\documents\visual studio 2015\projects\ms16-098\main.c(233): warning C4022: 'VirtualAlloc': pointer mismatch for actual parameter 1
+c:\users\saif\documents\visual studio 2015\projects\ms16-098\main.c(281): warning C4047: '=': 'BYTE *' differs in levels of indirection from 'BYTE'
+c:\users\saif\documents\visual studio 2015\projects\ms16-098\main.c(337): warning C4022: 'VirtualFree': pointer mismatch for actual parameter 1
+  MS16-098.vcxproj -> C:\Users\saif\Documents\Visual Studio 2015\Projects\MS16-098\x64\Debug\MS16-098.exe
+  MS16-098.vcxproj -> C:\Users\saif\Documents\Visual Studio 2015\Projects\MS16-098\x64\Debug\MS16-098.pdb (Partial PDB)

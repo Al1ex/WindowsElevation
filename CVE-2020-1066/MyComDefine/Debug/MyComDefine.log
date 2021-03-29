@@ -1,0 +1,39 @@
+﻿生成启动时间为 2020/5/2 15:58:28。
+     1>项目“E:\git\CVE-2020-1066\CVE-2020-1066-EXP\MyComDefine\MyComDefine.vcxproj”在节点 4 上(Build 个目标)。
+     1>Midl:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\midl.exe /W1 /nologo /char signed /env win32 /h "resolver_h.h" /tlb "Debug\MyComDefine.tlb" resolver.idl 
+         Processing .\resolver.idl
+         resolver.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oaidl.idl
+         oaidl.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\objidl.idl
+         objidl.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\unknwn.idl
+         unknwn.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\wtypes.idl
+         wtypes.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\wtypesbase.idl
+         wtypesbase.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\basetsd.h
+         basetsd.h
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\shared\guiddef.h
+         guiddef.h
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\ocidl.idl
+         ocidl.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oleidl.idl
+         oleidl.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\servprov.idl
+         servprov.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\urlmon.idl
+         urlmon.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\msxml.idl
+         msxml.idl
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\oaidl.acf
+         oaidl.acf
+         Processing C:\Program Files (x86)\Windows Kits\8.1\Include\um\ocidl.acf
+         ocidl.acf
+     1>已完成生成项目“E:\git\CVE-2020-1066\CVE-2020-1066-EXP\MyComDefine\MyComDefine.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.30

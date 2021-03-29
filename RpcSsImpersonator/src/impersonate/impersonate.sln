@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30014.187
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "impersonate", "impersonate\impersonate.vcxproj", "{5DE02FCD-F1BA-4BD4-9E44-4EF497A105EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Optimized|x64 = Optimized|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DE02FCD-F1BA-4BD4-9E44-4EF497A105EB}.Optimized|x64.ActiveCfg = Optimized|x64
+		{5DE02FCD-F1BA-4BD4-9E44-4EF497A105EB}.Optimized|x64.Build.0 = Optimized|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCDF39CB-CD2E-445D-BF54-D0F44A5791DF}
+	EndGlobalSection
+EndGlobal

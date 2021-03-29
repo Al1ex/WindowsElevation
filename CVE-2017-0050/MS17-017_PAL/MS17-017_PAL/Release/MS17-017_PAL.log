@@ -1,0 +1,12 @@
+﻿  Source.cpp
+c:\program files\windows kits\10\include\10.0.14393.0\um\ddraw.h(41): warning C4005: 'CO_E_NOTINITIALIZED': macro redefinition
+  C:\Program Files\Windows Kits\10\Include\10.0.14393.0\shared\winerror.h(29478): note: see previous definition of 'CO_E_NOTINITIALIZED'
+Source.cpp(189): warning C4129: '_': unrecognized character escape sequence
+Source.cpp(189): warning C4129: '/': unrecognized character escape sequence
+Source.cpp(191): warning C4129: '_': unrecognized character escape sequence
+Source.cpp(289): warning C4477: 'printf' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 1 has type 'HPALETTE'
+Source.cpp(324): warning C4477: 'printf' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 1 has type 'HANDLE'
+  Generating code
+  All 14 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  MS17-017_PAL.vcxproj -> C:\Users\saif\Documents\Visual Studio 2017\Projects\MS17-017_PAL\Release\MS17-017_PAL.exe
