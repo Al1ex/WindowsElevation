@@ -71,8 +71,6 @@ This project is mainly used to collect the commonly used exp of Windows platform
 | [CVE-2020-1066](./CVE-2020-1066) |                                                              | KB4552965 |        Microsoft .NET Framework 3.5.1/3.0         |
 | [CVE-2020-1337](./CVE-2020-1337) |                                                              | KB4571694 |                 Windows 2012/7/10                 |
 | [CVE-2020-1362](./CVE-2020-1362) |                                                              | KB4565503 |        Windows 10 1903/1809/1607/2004/1709        |
-|                                  |                                                              |           |                                                   |
-|                                  |                                                              |           |                                                   |
 
 ## Reference
 
