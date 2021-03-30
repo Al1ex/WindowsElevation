@@ -72,6 +72,7 @@ This project is mainly used to collect the commonly used exp of Windows platform
 | [CVE-2020-1337](./CVE-2020-1337) |                                                              | KB4571694 |                 Windows 2012/7/10                 |
 | [CVE-2020-1362](./CVE-2020-1362) |                                                              | KB4565503 |        Windows 10 1903/1809/1607/2004/1709        |
 | [CVE-2020-1054](./CVE-2020-1054) |                                                              | KB4556852 |         Windows 2008/2012/2016/2019/7/8/10        |
+| [CVE-2020-5272](./CVE-2020-5272) |                                                              |           |         Druva inSync Windows Client 6.6.3         |
 | [CVE-2020-1732](./CVE-2021-1732) |                                                              | KB4601315 |        Windows 10 1909/1803/Windows Server 2019   |
 
 ## Reference
