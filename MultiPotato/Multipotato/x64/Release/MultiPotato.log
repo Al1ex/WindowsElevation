@@ -1,0 +1,21 @@
+﻿  Bind.cpp
+  Desktop.cpp
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\Desktop.cpp(149,38): warning C4267: “=”: 从“size_t”转换到“WORD”，可能丢失数据
+  PipeServer.cpp
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp(17,1): warning C4005: “UNICODE”: 宏重定义
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp : message : 参见“UNICODE”的前一个定义
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp(40,63): warning C4474: printf: 格式字符串中传递的参数太多
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp(40,63): message : 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp(48,69): warning C4474: printf: 格式字符串中传递的参数太多
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp(48,69): message : 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp(193,50): warning C4474: printf: 格式字符串中传递的参数太多
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp(193,50): message : 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\PipeServer.cpp(131,9): warning C4101: “pToken1”: 未引用的局部变量
+  MultiPotato.cpp
+C:\Users\Al1ex\Downloads\MultiPotato\MultiPotato\MultiPotato.cpp(90,8): warning C4101: “threadId”: 未引用的局部变量
+  TokenKidnapping.cpp
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 22 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  MultiPotato.vcxproj -> C:\Users\Al1ex\Downloads\MultiPotato\x64\Release\MultiPotato.exe
