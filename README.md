@@ -75,7 +75,8 @@ This project is mainly used to collect the commonly used exp of Windows platform
 | [CVE-2020-5272](./CVE-2020-5272) |                                                              |           |         Druva inSync Windows Client 6.6.3         |
 | [CVE-2021-1732](./CVE-2021-1732) |                                                              | KB4601315 |        Windows 10 1909/1803/Windows Server 2019   |
 | [CVE-2021-40449](./CVE-2021-40449) |                                                            |           |  Windows 7/8.1/10(build 17763)/Server 2008/2012   |
-| [CVE-2022-21882](./CVE-2022-21882 |                                                             | KB5009543 |              Windows 10 GDR-DU                    |
+| [CVE-2022-21882](./CVE-2022-21882) |                                                            | KB5009543 |              Windows 10 GDR-DU                    |
+| [CVE-2022-22718](./CVE-2022-22718) |                                                            |           |             Windows Print Spooler                 |
 
 ## Reference
 
